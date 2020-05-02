@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     if(!bot.inventory[inventoryOwner.id]){
         bot.inventory[inventoryOwner.id] = {
             guild : message.guild.id,
-            Browncoins : 0,
+            gp : 0,
         }
         fs.writeFile("./inventory.json", JSON.stringify(bot.inventory), err => {
             if(err) throw err;

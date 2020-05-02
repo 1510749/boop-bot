@@ -64,7 +64,7 @@ module.exports.run = async (bot, message, args) => {
     }
 
     //sending Slots
-    let msg = await message.channel.send("```md\n" + `[${gambler.username}](${bot.inventory[gambler.id].Browncoins} Browncoins)'s Slot Machine` +"\n```\n" + "Select a bet amount to play. Or ❌ to leave");
+    let msg = await message.channel.send("```md\n" + `[${gambler.username}](${bot.inventory[gambler.id].Browncoins} rune zone)'s Slot Machine` +"\n```\n" + "Select a bet amount to play. Or ❌ to leave");
 
     var playing = true;
     while(playing){

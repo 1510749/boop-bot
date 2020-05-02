@@ -15,17 +15,17 @@ accept = "✅";
 decline = "❎";
 
 module.exports.run = async (bot, message, args) => {
-    healthZero = 20;
-    healthOne = 20;
-    var bodyActions = ["blows on", "tickles", "licks", "farted on", "puked on", "pissed on", "shat on", "kisses", "rubs", "sucks on", "wetts"];
+    healthZero = 99;
+    healthOne = 99;
+    var bodyActions = ["slices", "stabs", "jousts", "crushes", "used magic on", "used prayer on", "claws", "attacks", "smacked", "rushed", "froze"];
     var bodyParts = ["foot", "head", "elbow", "thigh", "toes", "thumb", "fingers", "finger", "palm",
         "ear", "nose", "knee", "ankle", "shoulder", "face", "hand", "butt", "belly button", "stolen car"];
 
-    var withActions = ["stabs", "slaps", "pokes", "rubs"];
-    var projectileActions = ["throws a", "drop kicks a", "catapults a", "fires a"];
-    var firesALaunchers = ["rifle", "pistol", "crossbow", "cannon", "mortar", "BB gun", "slingshot", "long bow"];
-    var items = ["rock","spear", "baseball", "hay bale", "book", "wooden crate", "metal box", "pot", "stick", "keyboard",
-        "monitor", "spanish dildo", "volleyball", "KNOWLEDGE", "Coke", "Pepsi", "basketball",
+    var withActions = ["slices", "stabs", "jousts", "claws"];
+    var projectileActions = ["throws a", "yeets a", "catapults a", "fires a"];
+    var firesALaunchers = ["hand cannon", "twisted bow", "dragon crossbow", "longbow", "shortbow", "Compound now", "slingshot", "ballista"];
+    var items = ["rock","spear", "scimitar", "arrow", "bolt", "wooden crate", "metal box", "pot", "stick", "keyboard",
+        "monitor", "cannonball", "volleyball", "KNOWLEDGE", "Coke", "Pepsi", "basketball",
         "pencil", "pen", "staple", "ceramic pot", "paperclip", "iPhone 4S", "shuriken"];
 
     var duelEE = message.author;
@@ -216,13 +216,13 @@ module.exports.run = async (bot, message, args) => {
                 withActionSlot = randomInt(0, withActions.length -1);
                 itemUsed = randomInt(0, items.length -1);
                 if (withActionSlot == 0){
-                    damage = randomInt(4,5);
+                    damage = randomInt(12,20);
                 }
                 else if (withActionSlot == 1){
-                    damage = randomInt(3,5);
+                    damage = randomInt(12,15);
                 }
                 else{
-                    damage = randomInt(3,4);
+                    damage = randomInt(8,15);
                 }
                 await console.log(damage, attackerHP, defenderHP);
                 var embed = await new Discord.RichEmbed()
@@ -251,7 +251,7 @@ module.exports.run = async (bot, message, args) => {
                 else{ item = items[itemUsed]}
 
                 if(bodyParts[bodyHit] == "head" || bodyParts[bodyHit] == "crotch"){
-                    damage = randomInt(5,6);
+                    damage = randomInt(10,25);
                 }
                 else {damage = randomInt(0,99);}//100% attack(note: randomInt is inclusive) 
 
@@ -260,7 +260,7 @@ module.exports.run = async (bot, message, args) => {
                     damageStatement = `missing`;
                 }
                 else{
-                    damage = randomInt(4,5);
+                    damage = randomInt(12,16);
                     damageStatement = `dealing ${damage} damage`;
                 }
                 await console.log(damage, attackerHP, defenderHP);
@@ -281,7 +281,7 @@ module.exports.run = async (bot, message, args) => {
             else if(scenario == 2){
                 bodyActionSlot = randomInt(0,bodyActions.length -1);
                 bodyHit = randomInt(0,bodyParts.length -1);
-                damage = randomInt(4,5);
+                damage = randomInt(9,23);
                 await console.log(damage, attackerHP, defenderHP);
                 var embed = await new Discord.RichEmbed()
                     .setTitle(`${toDuel1} (${defenderHP}hp)`)
@@ -298,7 +298,7 @@ module.exports.run = async (bot, message, args) => {
                 
             }
             else if(scenario == 3){
-                damage = randomInt(4,5);
+                damage = randomInt(8,15);
                 specificActionsSlot = randomInt(0,specificActions.length-1);
                 if(specificActionsSlot == 0){
                     suicideChance = randomInt(0,99);
@@ -357,7 +357,7 @@ module.exports.run = async (bot, message, args) => {
         msg.edit(`${toDuel.user.tag} has accepted the duel from ${message.author.tag}`);
         var turn = randomInt(0,1);
 
-        var color0 = "#e10606";
+        var color0 = "#0099e1";
         var color1 = "#e74600";
         console.log(`turn = ${turn} healthZero = ${healthZero} healthOne = ${healthOne}`);
         var done = false;
